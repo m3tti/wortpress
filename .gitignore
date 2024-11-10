@@ -1,0 +1,11 @@
+.cpcache
+target
+/.nrepl-port
+/.calva/
+/.clj-kondo/
+/.lsp/
+/changeme.lck
+/changeme.log
+/changeme.properties
+/changeme.script
+/.direnv/

@@ -1,0 +1,21 @@
+[{:create-table :users
+  :with-columns
+  [[:id :serial :primary :key]
+   [:email [:varchar 255] [:not nil]]
+   [:password [:varchar 255] [:not nil]]]}
+ {:create-table :posts
+  :with-columns
+  [[:id :serial :primary :key]
+   [:title [:varchar 255] [:not nil]]
+   [:content :text [:not nil]]
+   [:created_at :timestamp [:not nil]]]}
+ {:create-table :settings
+  :with-columns
+  [[:id :serial :primary :key]
+   [:primary_color [:varchar 7] [:not nil]]
+   [:secondary_color [:varchar 7] [:not nil]]
+   [:font [:varchar 4096] [:not nil]]]}
+ {:insert-into :settings
+  :values [{:primary_color "#2d2d2d"
+            :secondary_color "#ffffff"
+            :font "Roboto"}]}]
