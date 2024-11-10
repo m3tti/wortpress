@@ -9,5 +9,10 @@ to get the word out. The main workflow for wortpress is.
 
 ## Used technology
 - [borkweb](https://borkweb.org)
+- [postgres](https://www.postgresql.org/)
 
-# TBD
+# Hosting
+You'll need a reverse proxy and a postgres database. A postgres container is already part of the project and can be started with `docker-compose`. The initial configs can be found in the `src/config.clj` Here you have to setup your postgres connection and the name of your blog.
+After that you can setup the database with `bb -m database.core/initialize-db`. 
+After that you have to create an admin user with `bb -m commands.user/create-admin <email> <password>` 
+Now you are ready to go. The login can be found at `/login`.
