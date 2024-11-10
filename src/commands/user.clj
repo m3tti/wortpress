@@ -4,5 +4,6 @@
 
 (defn create-admin
   [& args]
-  (println "Password:")
-  (println (read)))
+  (if (< (count args) 2)
+    (println "<email> <password> needed!")
+    (user/insert {:email (first args) :password (second args)})))

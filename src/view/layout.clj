@@ -113,11 +113,14 @@
        (when user
          [:ul.navbar-nav
           [:li.nav-item
-           [:a.nav-link {:href "/post"} "Posts"]]
+           [:a.nav-link {:href "/post"
+                         :style (gaka/inline-css :color (:settings/secondary_color setting))} "Posts"]]
           [:li.nav-item
-           [:a.nav-link {:href "/setting"} "Settings"]]
+           [:a.nav-link {:href "/setting"
+                         :style (gaka/inline-css :color (:settings/secondary_color setting))} "Settings"]]
           [:li.nav-item
-           [:a.nav-link {:href "/logout"} "Logout"]]])]]]))
+           [:a.nav-link {:href "/logout"
+                         :style (gaka/inline-css :color (:settings/secondary_color setting))} "Logout"]]])]]]))
 
 (defn alert [req]
   (let* [msg (get-in req [:flash :message])
