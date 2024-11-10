@@ -4,4 +4,5 @@
 
 (defn create-admin
   [& args]
-  (println args))
+  (println "Password:")
+  (println (read)))
