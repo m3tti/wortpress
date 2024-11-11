@@ -23,8 +23,7 @@
    (du/parse-int "id")
    (assoc :created_at (LocalDateTime/now))
    du/remove-csrf
-   du/remove-empty-vals
-   du/->keywords))
+   du/remove-empty-vals))
 
 (defn save
   [req]
@@ -103,4 +102,4 @@
              [:input {:type "hidden" :name "id" :value (:posts/id e)}]
              [:input.btn.btn-danger {:type "submit" :data-bs-dismiss "modal" :value "Delete"}]]]
 )]))
-      (l/paginator req page (post/item-count) "/post")])))
+      (l/paginator req page (int (Math/ceil (/ (post/item-count) 25))) "/post")])))

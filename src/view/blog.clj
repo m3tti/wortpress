@@ -42,6 +42,6 @@
        [:div.container
         (map blog-entry elements)
         [:div.mt-4
-         (l/paginator req page (post/item-count) "/blog")]]
+         (l/paginator req page (int (Math/ceil (/ (post/item-count) 25))) "/blog")]]
        [:div.container
         [:h1.text-center "Nothing here yet!"]]))))
