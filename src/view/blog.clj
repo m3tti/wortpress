@@ -18,14 +18,18 @@
 (defn- blog-entry
   [entry]
   (let [setting (setting/get-setting)]
-    [:div.card.p-3.mb-3 {:style (gaka/inline-css
+    [:div.p-3.mb-3 {:style (gaka/inline-css
                                  :background (:settings/primary_color setting)
                                  :color (:settings/secondary_color setting)
                                  :border-color (:settings/secondary_color setting))}
-     [:div.fs-3
-      [:a {:href (str "/blog/" (:posts/id entry)) } (:posts/title entry)]]
      [:div
-      (h/raw (take 256 (:posts/content entry)))]]))
+      [:a.text-decoration-none
+       {:href (str "/blog/" (:posts/id entry))
+        :style (gaka/inline-css
+                :background (:settings/primary_color setting)
+                :color (:settings/secondary_color setting))}
+       [:div.fs-3 (:posts/title entry)]
+       [:div.fs-6 (:posts/created_at entry)]]]]))
 
 (defn index
   [req]

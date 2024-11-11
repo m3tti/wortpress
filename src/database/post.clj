@@ -31,6 +31,10 @@
              [:like :title (str "%" q "%")])
     :page page)))
 
+(defn all
+  []
+  (db/execute! {:select :* :from :posts}))
+
 (defn item-count
   []
   (db/item-count :posts))

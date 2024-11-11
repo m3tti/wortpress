@@ -7,6 +7,7 @@
    [view.post :as post]
    [view.blog :as blog]
    [view.setting :as setting]
+   [view.feed :as feed]
    [view.pwa :as pwa]
    [view.login :as login]))
 
@@ -60,5 +61,7 @@
      (get "/blog/:id" blog/show)
      ;; Setting
      (get "/setting" setting/index)
-     (post "/setting" setting/save)]
+     (post "/setting" setting/save)
+     ;; Feed
+     (get "/feed" feed/feed)]
     %))
